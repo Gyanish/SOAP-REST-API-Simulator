@@ -1,0 +1,44 @@
+<div class="container center">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>SOAP And REST API Simulator</h1>
+      <hr>
+      <div class="dropdown">
+          <select>
+            <option value="GET">GET</option>
+            <option value="PUT">PUT</option>
+            <option value="POST">POST</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+      </div>
+      <input placeholder="Enter URL" type="url" class="in" [(ngModel)]="link">
+      <button class="btn btn-default bb" type="submit" (click)="onGet()">Submit</button>
+     <hr>
+     <div class="pi">
+      <P>The Entered API :-</P>
+      {{ link }}
+     </div>
+     <hr>
+     <h2>Response</h2>
+     <hr>
+     <div *ngIf="undefined === data" id="fk">Results will be shown here...</div>
+      <div *ngIf="undefined !== data">
+        <ul>
+         <p>List of posts</p>
+         <li  id="dn" *ngFor="let post of data['posts']" [innerHTML]="post.title">
+         </li>
+        </ul>
+      </div>
+      <div class="call">
+       <button class="btn btn-default"><a href='http://localhost:4200'>Refresh</a></button>
+      </div> 
+    </div>
+  </div>  
+</div>
+ 
+
+
+
+
+
+
